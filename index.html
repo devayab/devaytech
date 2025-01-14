@@ -206,34 +206,39 @@
 				}
 			</script>
 			<style>
-			.collapsible {
-			  background-color: #007bff; /* Blue by default */
-			  color: white;
-			  cursor: pointer;
-			  padding: 18px;
-			  width: 100%;
-			  border: none;
-			  text-align: left;
-			  outline: none;
-			  font-size: 15px;
-			  transition: background-color 0.3s; /* Smooth transition for background color */
-			  margin-bottom: 10px; /* Add space between the buttons */
-			}
-			
-			.active, .collapsible:hover {
-			  background-color: #0056b3; /* Darker blue when hovered or active */
-			}
-			
-			.collapsible-content {
-			  padding: 0 18px;
-			  display: none;
-			  overflow: hidden;
-			  background-color: #f1f1f1; /* Keep the content background the same */
-			}
+				.collapsible {
+				  background-color: #d6d6d6;
+				  color: black;
+				  cursor: pointer;
+				  padding: 18px;
+				  width: 100%;
+				  border: none;
+				  text-align: left;
+				  outline: none;
+				  font-size: 15px;
+				  transition: background-color 0.3s;
+				  margin-bottom: 10px;
+				}
+				
+				.active, .collapsible:hover {
+				  background-color: #b3b3b3;
+				}
+				
+				.collapsible-content {
+				  padding: 0 18px;
+				  display: none;
+				  overflow: hidden;
+				  background-color: #f8f9fa;
+				}
+				
+				.collapsible:last-of-type {
+				  margin-bottom: 20px;
+				}
+				
+				.content h2 + .collapsible {
+				  margin-top: 10px;
+				}
 
-			.icon-wrapper {
-  				margin-left: auto;  /* Pushes icon to the right */
-			}
 			</style>
 								
 	</body>
