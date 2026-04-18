@@ -49,9 +49,9 @@
 
       if (scrollY >= top && scrollY < top + height) {
         navLinks.forEach(function (link) {
-          link.style.color = '';
+          link.classList.remove('is-active');
           if (link.getAttribute('href') === '#' + id) {
-            link.style.color = 'var(--color-primary)';
+            link.classList.add('is-active');
           }
         });
       }
