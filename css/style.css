@@ -1221,7 +1221,8 @@ h1, h2, h3, h4 {
     --color-bg:           #141412;
     --color-bg-alt:       #1e1d1b;
     --color-text:         #f0ede8;
-    --color-text-muted:   #a8a49e;
+    --color-text-muted:   #cac6c0;
+    --color-text-light:   #a09c96;
     --color-border:       #2e2c29;
     --color-green-light:  #1f3530;
     --color-green-border: #2d4a42;
@@ -1301,6 +1302,15 @@ h1, h2, h3, h4 {
   .cta-btn:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
+  }
+
+  /* Hardkodade #555-färger */
+  .nav-link {
+    color: #cac6c0;
+  }
+  .about-text p,
+  .contact-info p {
+    color: #cac6c0;
   }
 
   /* Portrait-foto */
