@@ -135,15 +135,53 @@ h1, h2, h3, h4 {
 /* ── 3. NAVIGATION ───────────────────────────────────── */
 
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
-  background: var(--color-bg-alt);
+  background: transparent;
   padding: 0 3rem;
   height: 64px;
   display: flex;
   align-items: center;
-  border-bottom: 2px solid var(--color-border);
+  border-bottom: 2px solid transparent;
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.nav.scrolled {
+  background: var(--color-bg-alt);
+  border-bottom-color: var(--color-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Vit logo, vita länktexter och hamburgare när nav är transparent */
+.nav:not(.scrolled) .nav-link {
+  color: rgba(255, 255, 255, 0.88);
+}
+.nav:not(.scrolled) .nav-link:hover {
+  color: #fff;
+}
+.nav:not(.scrolled) .nav-toggle span {
+  background: #fff;
+}
+
+/* Inverterar den mörka loggan till vit (ej i dark mode — där visas vit logo direkt) */
+@media not all and (prefers-color-scheme: dark) {
+  .nav:not(.scrolled) .nav-logo img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+/* Mobil dropdown: mörk overlay när nav är transparent */
+.nav:not(.scrolled) .nav-links.is-open {
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+.nav:not(.scrolled) .nav-links.is-open .nav-link {
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .nav-logo {
@@ -1277,12 +1315,9 @@ h1, h2, h3, h4 {
     --color-green-text-dk:#6B7BF5;
   }
 
-  /* Skuggor som inte kan variabliseras */
+  /* Starkare skugga i dark mode när nav är solid */
   .nav.scrolled {
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
-  }
-  .nav-links {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   }
 
 

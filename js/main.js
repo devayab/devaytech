@@ -51,7 +51,7 @@
         navLinks.forEach(function (link) {
           link.style.color = '';
           if (link.getAttribute('href') === '#' + id) {
-            link.style.color = '#0079cb';
+            link.style.color = 'var(--color-primary)';
           }
         });
       }
@@ -61,20 +61,24 @@
   window.addEventListener('scroll', highlightNav, { passive: true });
 
 
-  /* ── 3. NAVBAR-SKUGGA VID SCROLL ───────────────── */
+  /* ── 3. TRANSPARENT NAV ÖVER HERO → SOLID VID SCROLL ── */
 
-  var nav = document.querySelector('.nav');
+  var nav  = document.querySelector('.nav');
+  var hero = document.querySelector('.hero');
 
-  function navShadow() {
-    if (window.scrollY > 10) {
-      nav.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.06)';
+  function updateNav() {
+    if (!nav) return;
+    var threshold = hero ? hero.offsetHeight - 80 : 100;
+    if (window.scrollY > threshold) {
+      nav.classList.add('scrolled');
     } else {
-      nav.style.boxShadow = 'none';
+      nav.classList.remove('scrolled');
     }
   }
 
   if (nav) {
-    window.addEventListener('scroll', navShadow, { passive: true });
+    updateNav();
+    window.addEventListener('scroll', updateNav, { passive: true });
   }
 
 })();
