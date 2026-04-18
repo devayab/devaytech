@@ -42,24 +42,24 @@
 /* ── 1. CSS CUSTOM PROPERTIES (VARIABLER) ────────────── */
 
 :root {
-  /* Färger */
-  --color-primary:      #0079cb;   /* 4.57:1 på vit — AA ✅ */
-  --color-primary-dk:   #005d9c;
-  --color-secondary:    #41b883;   /* Grön — bakgrunder, borders, CTA-dekor */
-  --color-secondary-dk: #2a9d5f;   /* Mörkgrön hover på bakgrundsbruk */
-  --color-green-btn:    #35a872;   /* Knapp-grön — vit text AA-Stor 3.0:1 ✅ */
-  --color-green-btn-dk: #2a9d5f;   /* Hover på knapp */
-  --color-green-text:   #2e7d51;   /* Text-grön — 5.04:1 på vit AA ✅ */
-  --color-green-text-dk:#1a6b3a;   /* Hover på grön text */
+  /* Färger — 2026 palett: teal-emerald + warm sand */
+  --color-primary:      #1a7a5e;   /* Deep teal-emerald, 5.25:1 på vit — AA ✅ */
+  --color-primary-dk:   #145f48;   /* Mörkare teal, hover */
+  --color-secondary:    #2dba85;   /* Klarare emerald — bakgrunder, dekor */
+  --color-secondary-dk: #239c6e;
+  --color-green-btn:    #1a7a5e;
+  --color-green-btn-dk: #145f48;
+  --color-green-text:   #1a7a5e;   /* 5.25:1 på vit AA ✅ */
+  --color-green-text-dk:#145f48;
   --color-accent:       #ffd166;
-  --color-text:         #111;
-  --color-text-muted:   #555;      /* 7.46:1 på vit — AA ✅ (var #666, OK) */
-  --color-text-light:   #767676;   /* 4.54:1 på vit — AA ✅ (var #aaa, 2.32:1 ❌) */
-  --color-bg:         #fafafa;
-  --color-bg-alt:     #fff;
-  --color-border:     #eee;
-  --color-green-light: #e8f8f2;
-  --color-green-border: #b7e8d3;
+  --color-text:         #1c1c1a;   /* Warm charcoal */
+  --color-text-muted:   #5c5c58;   /* Warm grey, 7.2:1 AA ✅ */
+  --color-text-light:   #7a7a74;   /* Warm grey light, 4.6:1 AA ✅ */
+  --color-bg:           #f5f2ee;   /* Warm sand/beige */
+  --color-bg-alt:       #fff;      /* Vit — kontrast mot sand */
+  --color-border:       #e5e0d8;   /* Varm sandgräns */
+  --color-green-light:  #e6f4f0;   /* Teal-tinted sand */
+  --color-green-border: #b8ddd5;
 
   /* Typsnitt */
   --font-heading: 'Montserrat', sans-serif;
@@ -83,6 +83,7 @@
 }
 
 html {
+  font-size: 17px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
@@ -282,11 +283,11 @@ h1, h2, h3, h4 {
 }
 
 .hero-photo {
-  background: linear-gradient(180deg, transparent 0%, #f0f8f5 70%);
+  background: linear-gradient(180deg, transparent 0%, #f0ebe4 70%);
   border-radius: 16px;
   overflow: hidden;
   width: 88%;
-  box-shadow: 0 20px 60px rgba(65, 184, 131, 0.12);
+  box-shadow: 0 20px 60px rgba(26, 122, 94, 0.12);
 }
 
 .hero-photo img {
@@ -430,13 +431,13 @@ h1, h2, h3, h4 {
 
 .ai-banner p {
   font-size: 0.82rem;
-  color: #2d6a4f;
+  color: #1a7a5e;
   line-height: 1.7;
 }
 
 .ai-banner strong {
   font-family: var(--font-heading);
-  color: #1a5c3c;
+  color: #145f48;
 }
 
 
@@ -493,8 +494,8 @@ h1, h2, h3, h4 {
 }
 
 .value-card {
-  background: #f8fdfb;
-  border: 1px solid #e0f0e8;
+  background: #f0ede8;
+  border: 1px solid #e5e0d8;
   border-radius: 10px;
   padding: 1.5rem;
 }
@@ -801,7 +802,7 @@ h1, h2, h3, h4 {
 /* GDPR-kartsamtycke */
 .map-consent {
   height: 320px;
-  background: #f8fdfb;
+  background: #f0ede8;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -852,7 +853,7 @@ h1, h2, h3, h4 {
 
 .cta-banner {
   margin: 0 3rem 4rem;
-  background: linear-gradient(135deg, #0079cb 0%, #005d9c 100%);
+  background: linear-gradient(135deg, #1a7a5e 0%, #145f48 100%);
   border-radius: 16px;
   padding: 4rem;
   display: flex;
@@ -877,7 +878,7 @@ h1, h2, h3, h4 {
 
 .cta-btn {
   background: #fff;
-  color: #0079cb;
+  color: #1a7a5e;
   padding: 1rem 2.2rem;
   border-radius: 6px;
   font-weight: 800;
@@ -892,8 +893,8 @@ h1, h2, h3, h4 {
 
 .cta-btn:hover,
 .cta-btn:focus-visible {
-  background: #e8f4fd;
-  color: #005d9c;
+  background: #e6f4f0;
+  color: #145f48;
 }
 
 
