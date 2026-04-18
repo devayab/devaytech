@@ -43,14 +43,14 @@
 
 :root {
   /* Färger — 2026 palett: teal-emerald + warm sand */
-  --color-primary:      #1a7a5e;   /* Deep teal-emerald, 5.25:1 på vit — AA ✅ */
-  --color-primary-dk:   #145f48;   /* Mörkare teal, hover */
-  --color-secondary:    #2dba85;   /* Klarare emerald — bakgrunder, dekor */
-  --color-secondary-dk: #239c6e;
-  --color-green-btn:    #1a7a5e;
-  --color-green-btn-dk: #145f48;
-  --color-green-text:   #1a7a5e;   /* 5.25:1 på vit AA ✅ */
-  --color-green-text-dk:#145f48;
+  --color-primary:      #3451D1;   /* Cobalt indigo, 5.9:1 på sand — AA ✅ */
+  --color-primary-dk:   #2940A8;   /* Mörkare indigo, hover */
+  --color-secondary:    #6B8EF5;   /* Ljusare indigo — bakgrunder, dekor */
+  --color-secondary-dk: #4F73E5;
+  --color-green-btn:    #3451D1;
+  --color-green-btn-dk: #2940A8;
+  --color-green-text:   #3451D1;   /* 5.9:1 på sand AA ✅ */
+  --color-green-text-dk:#2940A8;
   --color-accent:       #ffd166;
   --color-text:         #1c1c1a;   /* Warm charcoal */
   --color-text-muted:   #5c5c58;   /* Warm grey, 7.2:1 AA ✅ */
@@ -58,8 +58,8 @@
   --color-bg:           #f5f2ee;   /* Warm sand/beige */
   --color-bg-alt:       #fff;      /* Vit — kontrast mot sand */
   --color-border:       #e5e0d8;   /* Varm sandgräns */
-  --color-green-light:  #e6f4f0;   /* Teal-tinted sand */
-  --color-green-border: #b8ddd5;
+  --color-green-light:  #EEF2FF;   /* Indigo-tinted bakgrund */
+  --color-green-border: #C7D2FE;
 
   /* Typsnitt */
   --font-heading: 'Montserrat', sans-serif;
@@ -287,7 +287,7 @@ h1, h2, h3, h4 {
   border-radius: 16px;
   overflow: hidden;
   width: 88%;
-  box-shadow: 0 20px 60px rgba(26, 122, 94, 0.12);
+  box-shadow: 0 20px 60px rgba(52, 81, 209, 0.12);
 }
 
 .hero-photo img {
@@ -431,13 +431,13 @@ h1, h2, h3, h4 {
 
 .ai-banner p {
   font-size: 0.82rem;
-  color: #1a7a5e;
+  color: #3451D1;
   line-height: 1.7;
 }
 
 .ai-banner strong {
   font-family: var(--font-heading);
-  color: #145f48;
+  color: #2940A8;
 }
 
 
@@ -801,7 +801,7 @@ h1, h2, h3, h4 {
 
 /* GDPR-kartsamtycke */
 .map-consent {
-  height: 320px;
+  min-height: 280px;
   background: #f0ede8;
   border-radius: 12px;
   display: flex;
@@ -853,7 +853,7 @@ h1, h2, h3, h4 {
 
 .cta-banner {
   margin: 0 3rem 4rem;
-  background: linear-gradient(135deg, #1a7a5e 0%, #145f48 100%);
+  background: linear-gradient(135deg, #3451D1 0%, #2940A8 100%);
   border-radius: 16px;
   padding: 4rem;
   display: flex;
@@ -878,7 +878,7 @@ h1, h2, h3, h4 {
 
 .cta-btn {
   background: #fff;
-  color: #1a7a5e;
+  color: #3451D1;
   padding: 1rem 2.2rem;
   border-radius: 6px;
   font-weight: 800;
@@ -893,8 +893,8 @@ h1, h2, h3, h4 {
 
 .cta-btn:hover,
 .cta-btn:focus-visible {
-  background: #e6f4f0;
-  color: #145f48;
+  background: #EEF2FF;
+  color: #2940A8;
 }
 
 
@@ -1224,12 +1224,12 @@ h1, h2, h3, h4 {
     --color-text-muted:   #cac6c0;
     --color-text-light:   #a09c96;
     --color-border:       #2e2c29;
-    --color-green-light:  #1f3530;
-    --color-green-border: #2d4a42;
-    --color-primary:      #2dba85;
-    --color-primary-dk:   #239c6e;
-    --color-green-text:   #2dba85;
-    --color-green-text-dk:#239c6e;
+    --color-green-light:  #1E2040;
+    --color-green-border: #2D3270;
+    --color-primary:      #818CF8;
+    --color-primary-dk:   #6B7BF5;
+    --color-green-text:   #818CF8;
+    --color-green-text-dk:#6B7BF5;
   }
 
   /* Navigation */
@@ -1260,31 +1260,31 @@ h1, h2, h3, h4 {
 
   /* Hero photo frame */
   .hero-photo {
-    background: linear-gradient(135deg, #1e1d1b 0%, #1f3530 100%);
+    background: linear-gradient(135deg, #1e1d1b 0%, #1E2040 100%);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
   }
 
   /* Value cards */
   .value-card {
-    background: #1f3530;
-    border-color: #2d4a42;
+    background: #1E2040;
+    border-color: #2D3270;
   }
 
-  /* AI-banner: tydlig teal-ram mot mörk bakgrund */
+  /* AI-banner: tydlig indigo-ram mot mörk bakgrund */
   .ai-banner {
-    background: #1f3530;
-    border-color: #3a6058;
+    background: #1E2040;
+    border-color: #3D4DB3;
   }
   .ai-banner p {
-    color: #7dd9b8;
+    color: #93A8FF;
   }
   .ai-banner strong {
-    color: #a8edcf;
+    color: #B8C7FF;
   }
 
   /* Map consent */
   .map-consent {
-    background: #1f3530;
+    background: #1E2040;
   }
 
   /* Footer */
