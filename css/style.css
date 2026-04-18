@@ -1088,7 +1088,7 @@ h1, h2, h3, h4 {
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 
   .hero-subtitle {
@@ -1214,7 +1214,68 @@ h1, h2, h3, h4 {
 }
 
 
-/* ── 19. UTSKRIFT ────────────────────────────────────── */
+/* ── 19. DARK MODE ──────────────────────────────────── */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:           #141412;
+    --color-bg-alt:       #1e1d1b;
+    --color-text:         #f0ede8;
+    --color-text-muted:   #a8a49e;
+    --color-border:       #2e2c29;
+    --color-green-light:  #1a2e29;
+    --color-green-border: #2d4a42;
+    --color-primary:      #2dba85;
+    --color-primary-dk:   #239c6e;
+    --color-green-text:   #2dba85;
+    --color-green-text-dk:#239c6e;
+  }
+
+  .nav {
+    background: #1e1d1b;
+    border-bottom-color: #2e2c29;
+  }
+
+  .nav.scrolled {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-links {
+    background: #1e1d1b;
+    border-bottom-color: #2e2c29;
+  }
+
+  .service-card,
+  .case-card,
+  .blog-card {
+    background: #1e1d1b;
+  }
+
+  .hero-photo {
+    background: linear-gradient(135deg, #1e1d1b 0%, #1a2e29 100%);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .value-card {
+    background: #1a2e29;
+    border-color: #2d4a42;
+  }
+
+  .ai-banner {
+    background: linear-gradient(135deg, #1a2e29 0%, #141412 100%);
+  }
+
+  .map-consent {
+    background: #1a2e29;
+  }
+
+  .contact-anna img {
+    opacity: 0.9;
+  }
+}
+
+
+/* ── 20. UTSKRIFT ────────────────────────────────────── */
 
 @media print {
   .nav,
