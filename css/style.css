@@ -496,14 +496,44 @@ h1, h2, h3, h4 {
   border-radius: 12px;
   padding: 1.5rem 2rem;
   display: flex;
-  align-items: flex-start;
-  gap: 1.2rem;
+  align-items: center;
   border: 1px solid var(--color-primary-border);
+  position: relative;
+  overflow: visible;
 }
 
-.ai-banner .icon {
-  font-size: 1.6rem;
-  flex-shrink: 0;
+.ai-robot {
+  position: absolute;
+  left: 1.2rem;
+  top: -22px;
+  width: 90px;
+  pointer-events: auto;
+  cursor: pointer;
+  filter: drop-shadow(3px 4px 6px rgba(139, 69, 19, 0.35));
+}
+
+.ai-robot svg {
+  display: block;
+  transform: rotate(-15deg);
+  transform-origin: center bottom;
+}
+
+.ai-robot:hover svg {
+  animation: robot-happy 0.6s ease forwards;
+}
+
+@keyframes robot-happy {
+  0%   { transform: rotate(-15deg) translateY(0);    }
+  20%  { transform: rotate(-22deg) translateY(-14px); }
+  40%  { transform: rotate(-8deg)  translateY(-18px); }
+  58%  { transform: rotate(-19deg) translateY(-8px);  }
+  72%  { transform: rotate(-10deg) translateY(-12px); }
+  86%  { transform: rotate(-15deg) translateY(-3px);  }
+  100% { transform: rotate(-15deg) translateY(0);    }
+}
+
+.ai-banner-text {
+  padding-left: 7rem;
 }
 
 .ai-banner p {
@@ -575,6 +605,20 @@ h1, h2, h3, h4 {
   border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 1.5rem;
+}
+
+.value-card:hover {
+  animation: card-shake 0.5s ease;
+}
+
+@keyframes card-shake {
+  0%,100% { transform: translateX(0); }
+  15%      { transform: translateX(-5px) rotate(-0.8deg); }
+  30%      { transform: translateX(5px)  rotate(0.8deg); }
+  45%      { transform: translateX(-4px) rotate(-0.5deg); }
+  60%      { transform: translateX(4px)  rotate(0.5deg); }
+  75%      { transform: translateX(-2px) rotate(-0.2deg); }
+  90%      { transform: translateX(2px)  rotate(0.2deg); }
 }
 
 .value-card h4 {
@@ -1216,6 +1260,9 @@ h1, h2, h3, h4 {
   .ai-banner {
     margin: 0 1.2rem 1.5rem;
   }
+
+  .ai-robot { width: 48px; left: 1rem; }
+  .ai-banner-text { padding-left: 4rem; }
 
   .cta-banner {
     margin: 0 1.2rem 3rem;
