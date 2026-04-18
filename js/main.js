@@ -123,7 +123,9 @@ function loadMap() {
 
   if (consent) consent.style.display = 'none';
   if (iframe) {
-    iframe.src = iframe.getAttribute('data-src');
+    iframe.src = iframe.getAttribute('data-src') || '';
     iframe.style.display = 'block';
   }
 }
+
+window.loadMap = loadMap;

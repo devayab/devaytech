@@ -39,7 +39,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
 
   <!-- Preload kritiska resurser -->
-  <link rel="preload" as="image" href="images/hero.webp" type="image/webp">
+  <link rel="preload" as="image" href="images/hero.webp" type="image/webp" fetchpriority="high">
 
 
   <!-- Stylesheet -->
@@ -163,10 +163,10 @@
       <span></span>
     </button>
 
-    <div class="nav-links" id="nav-menu" role="menubar">
-      <a href="#tjanster" class="nav-link" role="menuitem">Tjänster</a>
-      <a href="#om-oss" class="nav-link" role="menuitem">Om oss</a>
-      <a href="#case" class="nav-link" role="menuitem">Case</a>
+    <div class="nav-links" id="nav-menu">
+      <a href="#tjanster" class="nav-link">Tjänster</a>
+      <a href="#om-oss" class="nav-link">Om oss</a>
+      <a href="#case" class="nav-link">Case</a>
     </div>
 
     <a href="#kontakt" class="nav-cta">Kontakta oss</a>
@@ -473,7 +473,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 Devay AB &middot; Org.nr: 559456-9799 &middot; F-skatt &middot; Karlskrona, Sverige</p>
-      <p style="margin-top: 0.4rem;"><a href="integritetspolicy/index.html" style="color: #666; text-decoration: underline; font-size: 0.75rem;">Integritetspolicy</a></p>
+      <p><a href="integritetspolicy/index.html" class="footer-policy-link">Integritetspolicy</a></p>
     </div>
   </footer>
 
