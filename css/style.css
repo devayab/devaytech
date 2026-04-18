@@ -1223,7 +1223,7 @@ h1, h2, h3, h4 {
     --color-text:         #f0ede8;
     --color-text-muted:   #a8a49e;
     --color-border:       #2e2c29;
-    --color-green-light:  #1a2e29;
+    --color-green-light:  #1f3530;
     --color-green-border: #2d4a42;
     --color-primary:      #2dba85;
     --color-primary-dk:   #239c6e;
@@ -1231,44 +1231,79 @@ h1, h2, h3, h4 {
     --color-green-text-dk:#239c6e;
   }
 
+  /* Navigation */
   .nav {
     background: #1e1d1b;
     border-bottom-color: #2e2c29;
   }
-
   .nav.scrolled {
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
   }
-
   .nav-links {
     background: #1e1d1b;
     border-bottom-color: #2e2c29;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   }
 
+  /* Sections with white bg */
+  .section--white {
+    background: #141412;
+  }
+
+  /* Cards */
   .service-card,
   .case-card,
   .blog-card {
     background: #1e1d1b;
   }
 
+  /* Hero photo frame */
   .hero-photo {
-    background: linear-gradient(135deg, #1e1d1b 0%, #1a2e29 100%);
+    background: linear-gradient(135deg, #1e1d1b 0%, #1f3530 100%);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
   }
 
+  /* Value cards */
   .value-card {
-    background: #1a2e29;
+    background: #1f3530;
     border-color: #2d4a42;
   }
 
+  /* AI-banner: tydlig teal-ram mot mörk bakgrund */
   .ai-banner {
-    background: linear-gradient(135deg, #1a2e29 0%, #141412 100%);
+    background: #1f3530;
+    border-color: #3a6058;
+  }
+  .ai-banner p {
+    color: #7dd9b8;
+  }
+  .ai-banner strong {
+    color: #a8edcf;
   }
 
+  /* Map consent */
   .map-consent {
-    background: #1a2e29;
+    background: #1f3530;
   }
 
+  /* Footer */
+  .footer {
+    background: #0e0e0c;
+    border-top-color: #2e2c29;
+  }
+
+  /* CTA-knapp (vit bg med teal-text) */
+  .cta-btn {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+  }
+  .cta-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  /* Portrait-foto */
   .contact-anna img {
     opacity: 0.9;
   }
