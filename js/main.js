@@ -129,3 +129,30 @@ function loadMap() {
 }
 
 window.loadMap = loadMap;
+
+
+/* ── 6. TAP/HOVER-ANIMATIONER (återspelningsbara) ─── */
+
+(function () {
+  function triggerAnim(el) {
+    if (el.classList.contains('is-animating')) return;
+    el.classList.add('is-animating');
+    el.addEventListener('animationend', function handler() {
+      el.classList.remove('is-animating');
+      el.removeEventListener('animationend', handler);
+    });
+  }
+
+  // Värdekort — skak vid hover (desktop) och klick/tap (mobil)
+  document.querySelectorAll('.value-card').forEach(function (card) {
+    card.addEventListener('mouseenter', function () { triggerAnim(card); });
+    card.addEventListener('click', function () { triggerAnim(card); });
+  });
+
+  // Robot — hopp vid hover (desktop) och klick/tap (mobil)
+  var robot = document.querySelector('.ai-robot');
+  if (robot) {
+    robot.addEventListener('mouseenter', function () { triggerAnim(robot); });
+    robot.addEventListener('click', function () { triggerAnim(robot); });
+  }
+})();

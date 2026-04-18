@@ -518,7 +518,7 @@ h1, h2, h3, h4 {
   transform-origin: center bottom;
 }
 
-.ai-robot:hover svg {
+.ai-robot.is-animating svg {
   animation: robot-happy 0.6s ease forwards;
 }
 
@@ -607,7 +607,7 @@ h1, h2, h3, h4 {
   padding: 1.5rem;
 }
 
-.value-card:hover {
+.value-card.is-animating {
   animation: card-shake 0.5s ease;
 }
 
