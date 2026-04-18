@@ -354,13 +354,7 @@ h1, h2, h3, h4 {
   flex-shrink: 0;
 }
 
-.btn-link--light {
-  color: rgba(255, 255, 255, 0.85);
-}
 
-.btn-link--light:hover {
-  color: #fff;
-}
 
 
 /* ── 5. KNAPPAR (globala) ────────────────────────────── */
@@ -396,6 +390,17 @@ h1, h2, h3, h4 {
 .btn-link:hover,
 .btn-link:focus-visible {
   color: var(--color-primary);
+}
+
+.btn-link--light {
+  color: rgba(255, 255, 255, 0.88);
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-link--light:hover,
+.btn-link--light:focus-visible {
+  color: #fff;
+  border-bottom-color: #fff;
 }
 
 
