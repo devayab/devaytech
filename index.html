@@ -39,7 +39,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
 
   <!-- Preload kritiska resurser -->
-  <link rel="preload" as="image" href="images/vd-portrat.webp" type="image/webp">
+  <link rel="preload" as="image" href="images/hero.webp" type="image/webp">
 
 
   <!-- Stylesheet -->
@@ -180,24 +180,25 @@
 
     <!-- ── HERO ── -->
     <section class="hero" aria-label="Introduktion">
+      <div class="hero-bg">
+        <picture>
+          <source srcset="images/hero.webp" type="image/webp">
+          <img src="images/hero.jpg"
+               alt="Devay-teamet arbetar tillsammans på kontoret i Karlskrona"
+               width="2400" height="1545"
+               loading="eager">
+        </picture>
+        <div class="hero-overlay"></div>
+      </div>
       <div class="hero-content">
         <span class="pill">Karlskrona, Sverige</span>
         <h1 class="hero-title">Robusta digitala lösningar<br>med <em>.NET, C# &amp; AI</em></h1>
-        <p class="hero-subtitle">Vi bygger skalbara systemlösningar, smarta integrationer och framtidssäkra arkitektur. Nära samarbete, transparent process, gedigen teknisk expertis med modern AI.</p>
-        <div class="hero-actions">
-          <a href="#kontakt" class="btn-primary">Boka ett samtal</a>
-          <a href="#case" class="btn-link">Se våra case &rarr;</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <div class="hero-photo">
-          <picture>
-            <source srcset="images/coffee.webp" type="image/webp">
-            <img src="images/coffee.jpeg"
-                 alt="Blå kaffekopp på Devays kontor i Karlskrona"
-                 width="2200" height="1848"
-                 loading="eager">
-          </picture>
+        <div class="hero-bottom">
+          <p class="hero-subtitle">Vi bygger skalbara systemlösningar, smarta integrationer och framtidssäkra arkitektur. Nära samarbete, transparent process, gedigen teknisk expertis med modern AI.</p>
+          <div class="hero-actions">
+            <a href="#kontakt" class="btn-primary">Boka ett samtal</a>
+            <a href="#case" class="btn-link btn-link--light">Se våra case &rarr;</a>
+          </div>
         </div>
       </div>
     </section>
