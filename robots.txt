@@ -1,0 +1,5 @@
+# Devay AB — robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://www.devay.se/sitemap.xml
