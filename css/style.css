@@ -463,16 +463,34 @@ h1, h2, h3, h4 {
   padding: 2rem;
   background: var(--color-bg-alt);
   transition: border-color 0.2s ease;
+  position: relative;
+  overflow: visible;
 }
 
-.service-card:hover {
-  border-color: var(--color-primary-text);
-}
 
-.service-card .icon {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
+.card-icon {
+  position: absolute;
+  top: -16px;
+  right: -12px;
+  width: 56px;
+  pointer-events: none;
+  filter: drop-shadow(2px 3px 6px rgba(0,0,0,0.18));
 }
+.card-icon svg { display: block; width: 100%; height: auto; }
+
+.card-icon--code svg      { animation: icon-float  3.0s ease-in-out infinite; }
+.card-icon--nodes svg     { animation: icon-pulse  2.5s ease-in-out infinite; }
+.card-icon--magnifier svg { animation: icon-swing  3.5s ease-in-out infinite; }
+.card-icon--kanban svg    { animation: icon-bounce 2.2s ease-in-out infinite; }
+.card-icon--bridge svg    { animation: icon-wobble 4.0s ease-in-out infinite; }
+.card-icon--bino svg      { animation: icon-spin   8.0s linear     infinite; }
+
+@keyframes icon-float  { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-7px)} }
+@keyframes icon-pulse  { 0%,100%{transform:scale(1)}       50%{transform:scale(1.15)} }
+@keyframes icon-swing  { 0%,100%{transform:rotate(0deg)}   50%{transform:rotate(12deg)} }
+@keyframes icon-bounce { 0%,100%{transform:translateY(0)}  35%{transform:translateY(-9px)} 65%{transform:translateY(-4px)} }
+@keyframes icon-wobble { 0%,100%{transform:translateX(0)}  25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+@keyframes icon-spin   { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
 
 .service-card h3 {
   font-size: 0.92rem;
@@ -1263,6 +1281,8 @@ h1, h2, h3, h4 {
 
   .ai-robot { width: 48px; left: 1rem; }
   .ai-banner-text { padding-left: 4rem; }
+
+  .card-icon { right: 0.5rem; top: -12px; width: 44px; }
 
   .cta-banner {
     margin: 0 1.2rem 3rem;
