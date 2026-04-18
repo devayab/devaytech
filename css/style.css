@@ -25,14 +25,16 @@
    Datum:    2026-04-15
    ═══════════════════════════════════════════════════════════
 
-   GRAFISK PROFIL
+   GRAFISK PROFIL — 2026
    ─────────────────────────────────
-   Primär:      #0079cb  (Devay-blå)      4.57:1 på vit ✅
-   Sekundär:    #41b883  (Grön — UI/bakgrund, ej text)
-   Text-grön:   #27774a  (Grön text/knappar) 5.49:1 på vit ✅
-   Accent:      #ffd166  (Gul — sparsamt)
-   Mörkblå:     #005d9c  (Hover/djup)
-   Grå logo:    #bfbfbf
+   Primär:      #3451D1  (Cobalt indigo)   5.9:1 på sand ✅
+   Primär mörk: #2940A8  (Hover/djup)
+   Bakgrund:    #f5f2ee  (Warm sand)
+   Kort:        #f0ede8  (Något mörkare sand)
+   Vit yta:     #fff     (Nav, kort, sektioner)
+   Text:        #1c1c1a  (Warm charcoal)
+   ─────────────────────────────────
+   Ändra ENDAST i :root — aldrig hårdkoda färger
    ─────────────────────────────────
    Rubriker:    Montserrat
    Brödtext:    Open Sans
@@ -55,8 +57,9 @@
   --color-text:         #1c1c1a;   /* Warm charcoal */
   --color-text-muted:   #5c5c58;   /* Warm grey, 7.2:1 AA ✅ */
   --color-text-light:   #7a7a74;   /* Warm grey light, 4.6:1 AA ✅ */
-  --color-bg:           #f5f2ee;   /* Warm sand/beige */
-  --color-bg-alt:       #fff;      /* Vit — kontrast mot sand */
+  --color-bg:           #f5f2ee;   /* Warm sand/beige — sidbakgrund */
+  --color-bg-alt:       #fff;      /* Vit — nav, kort, sektioner */
+  --color-bg-card:      #f0ede8;   /* Något varmare — value-card, kartbox */
   --color-border:       #e5e0d8;   /* Varm sandgräns */
   --color-green-light:  #EEF2FF;   /* Indigo-tinted bakgrund */
   --color-green-border: #C7D2FE;
@@ -135,12 +138,12 @@ h1, h2, h3, h4 {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #fff;
+  background: var(--color-bg-alt);
   padding: 0 3rem;
   height: 64px;
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #f5f5f5;
+  border-bottom: 2px solid var(--color-border);
 }
 
 .nav-logo {
@@ -171,7 +174,7 @@ h1, h2, h3, h4 {
 
 .nav-link {
   font-size: 0.82rem;
-  color: #555;
+  color: var(--color-text-muted);
   font-weight: 500;
   transition: color 0.2s ease;
 }
@@ -343,7 +346,7 @@ h1, h2, h3, h4 {
 }
 
 .section--white {
-  background: #fff;
+  background: var(--color-bg-alt);
 }
 
 .section-eyebrow {
@@ -381,10 +384,10 @@ h1, h2, h3, h4 {
 }
 
 .service-card {
-  border: 1.5px solid #eee;
+  border: 1.5px solid var(--color-border);
   border-radius: 12px;
   padding: 2rem;
-  background: #fff;
+  background: var(--color-bg-alt);
   transition: border-color 0.2s ease;
 }
 
@@ -431,13 +434,13 @@ h1, h2, h3, h4 {
 
 .ai-banner p {
   font-size: 0.82rem;
-  color: #3451D1;
+  color: var(--color-primary);
   line-height: 1.7;
 }
 
 .ai-banner strong {
   font-family: var(--font-heading);
-  color: #2940A8;
+  color: var(--color-primary-dk);
 }
 
 
@@ -459,7 +462,7 @@ h1, h2, h3, h4 {
 
 .about-text p {
   font-size: 0.85rem;
-  color: #555;
+  color: var(--color-text-muted);
   line-height: 1.8;
   margin-bottom: 1.2rem;
 }
@@ -483,7 +486,7 @@ h1, h2, h3, h4 {
 
 .stat-label {
   font-size: 0.72rem;
-  color: #888;
+  color: var(--color-text-light);
   margin-top: 0.2rem;
 }
 
@@ -494,8 +497,8 @@ h1, h2, h3, h4 {
 }
 
 .value-card {
-  background: #f0ede8;
-  border: 1px solid #e5e0d8;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 1.5rem;
 }
@@ -604,10 +607,10 @@ h1, h2, h3, h4 {
 }
 
 .case-card {
-  border: 1.5px solid #eee;
+  border: 1.5px solid var(--color-border);
   border-radius: 12px;
   padding: 2rem;
-  background: #fff;
+  background: var(--color-bg-alt);
   transition: border-color 0.2s ease;
 }
 
@@ -659,10 +662,10 @@ h1, h2, h3, h4 {
 }
 
 .blog-card {
-  border: 1.5px solid #eee;
+  border: 1.5px solid var(--color-border);
   border-radius: 12px;
   overflow: hidden;
-  background: #fff;
+  background: var(--color-bg-alt);
   transition: border-color 0.2s ease;
 }
 
@@ -753,7 +756,7 @@ h1, h2, h3, h4 {
 
 .contact-info p {
   font-size: 0.85rem;
-  color: #555;
+  color: var(--color-text-muted);
   line-height: 1.8;
   margin-bottom: 1.25rem;
 }
@@ -790,7 +793,7 @@ h1, h2, h3, h4 {
 .contact-map {
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #eee;
+  border: 1px solid var(--color-border);
 }
 
 .contact-map iframe {
@@ -802,7 +805,7 @@ h1, h2, h3, h4 {
 /* GDPR-kartsamtycke */
 .map-consent {
   min-height: 280px;
-  background: #f0ede8;
+  background: var(--color-bg-card);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -853,7 +856,7 @@ h1, h2, h3, h4 {
 
 .cta-banner {
   margin: 0 3rem 4rem;
-  background: linear-gradient(135deg, #3451D1 0%, #2940A8 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dk) 100%);
   border-radius: 16px;
   padding: 4rem;
   display: flex;
@@ -877,8 +880,8 @@ h1, h2, h3, h4 {
 }
 
 .cta-btn {
-  background: #fff;
-  color: #3451D1;
+  background: var(--color-bg-alt);
+  color: var(--color-primary);
   padding: 1rem 2.2rem;
   border-radius: 6px;
   font-weight: 800;
@@ -893,16 +896,16 @@ h1, h2, h3, h4 {
 
 .cta-btn:hover,
 .cta-btn:focus-visible {
-  background: #EEF2FF;
-  color: #2940A8;
+  background: var(--color-green-light);
+  color: var(--color-primary-dk);
 }
 
 
 /* ── 14. FOOTER ──────────────────────────────────────── */
 
 .footer {
-  background: #fff;
-  border-top: 1px solid #f0f0f0;
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
   padding: 3rem;
   color: var(--color-text);
 }
@@ -968,7 +971,7 @@ h1, h2, h3, h4 {
 }
 
 .footer-bottom {
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--color-border);
   margin-top: 2rem;
   padding-top: 1.5rem;
   font-size: 0.75rem;
@@ -1062,11 +1065,11 @@ h1, h2, h3, h4 {
     top: 100%;
     left: 0;
     right: 0;
-    background: #fff;
+    background: var(--color-bg-alt);
     flex-direction: column;
     padding: 1rem 1.5rem 1.5rem;
     gap: 1rem;
-    border-bottom: 2px solid #f5f5f5;
+    border-bottom: 2px solid var(--color-border);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   }
 
@@ -1217,9 +1220,11 @@ h1, h2, h3, h4 {
 /* ── 19. DARK MODE ──────────────────────────────────── */
 
 @media (prefers-color-scheme: dark) {
+  /* Alla variabler — klasser som använder var() anpassas automatiskt */
   :root {
     --color-bg:           #141412;
-    --color-bg-alt:       #1e1d1b;
+    --color-bg-alt:       #1e1d1b;   /* nav, kort, section--white */
+    --color-bg-card:      #1E2040;   /* value-card, map-consent */
     --color-text:         #f0ede8;
     --color-text-muted:   #cac6c0;
     --color-text-light:   #a09c96;
@@ -1232,47 +1237,22 @@ h1, h2, h3, h4 {
     --color-green-text-dk:#6B7BF5;
   }
 
-  /* Navigation */
-  .nav {
-    background: #1e1d1b;
-    border-bottom-color: #2e2c29;
-  }
+  /* Skuggor som inte kan variabliseras */
   .nav.scrolled {
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
   }
   .nav-links {
-    background: #1e1d1b;
-    border-bottom-color: #2e2c29;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   }
 
-  /* Sections with white bg */
-  .section--white {
-    background: #141412;
-  }
-
-  /* Cards */
-  .service-card,
-  .case-card,
-  .blog-card {
-    background: #1e1d1b;
-  }
-
-  /* Hero photo frame */
+  /* Hero-foto: dekorativ gradient */
   .hero-photo {
     background: linear-gradient(135deg, #1e1d1b 0%, #1E2040 100%);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
   }
 
-  /* Value cards */
-  .value-card {
-    background: #1E2040;
-    border-color: #2D3270;
-  }
-
-  /* AI-banner: tydlig indigo-ram mot mörk bakgrund */
+  /* AI-banner: ljusare indigo-ram för synlighet */
   .ai-banner {
-    background: #1E2040;
     border-color: #3D4DB3;
   }
   .ai-banner p {
@@ -1282,18 +1262,12 @@ h1, h2, h3, h4 {
     color: #B8C7FF;
   }
 
-  /* Map consent */
-  .map-consent {
-    background: #1E2040;
-  }
-
-  /* Footer */
+  /* Footer: aningen mörkare än bg-alt */
   .footer {
     background: #0e0e0c;
-    border-top-color: #2e2c29;
   }
 
-  /* CTA-knapp (vit bg med teal-text) */
+  /* CTA-knapp på indigo-gradient: transparent med vit ram */
   .cta-btn {
     background: transparent;
     color: #fff;
@@ -1302,15 +1276,6 @@ h1, h2, h3, h4 {
   .cta-btn:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
-  }
-
-  /* Hardkodade #555-färger */
-  .nav-link {
-    color: #cac6c0;
-  }
-  .about-text p,
-  .contact-info p {
-    color: #cac6c0;
   }
 
   /* Portrait-foto */
