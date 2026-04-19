@@ -2,7 +2,7 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Integritetspolicy — Devay AB</title>
   <meta name="description" content="Devay ABs integritetspolicy beskriver hur vi samlar in, använder och skyddar personuppgifter.">
   <meta name="robots" content="noindex">
@@ -25,7 +25,12 @@
     .policy-content {
       max-width: 760px;
       margin: 0 auto;
-      padding: 4rem 3rem 6rem;
+      padding: 8rem 3rem 6rem !important;
+    }
+    @media (max-width: 640px) {
+      .policy-content {
+        padding: 9rem 1.5rem 4rem !important;
+      }
     }
     .policy-content h1 {
       font-family: var(--font-heading);
