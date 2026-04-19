@@ -471,11 +471,11 @@ h1, h2, h3, h4 {
 
 .card-icon {
   position: absolute;
-  top: -16px;
-  right: -12px;
-  width: 56px;
+  top: 1rem;
+  right: 1rem;
+  width: 38px;
   pointer-events: none;
-  filter: drop-shadow(2px 3px 6px rgba(0,0,0,0.18));
+  opacity: 0.85;
 }
 .card-icon svg { display: block; width: 100%; height: auto; }
 
@@ -1248,7 +1248,7 @@ h1, h2, h3, h4 {
   .ai-robot { width: 48px; left: 1rem; }
   .ai-banner-text { padding-left: 4rem; }
 
-  .card-icon { right: 0.5rem; top: -12px; width: 44px; }
+  .card-icon { right: 0.75rem; top: 0.75rem; width: 30px; }
 
   .cta-banner {
     margin: 0 1.2rem 3rem;
