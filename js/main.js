@@ -183,14 +183,14 @@ window.loadMap = loadMap;
     clearTimeout(bubbleTimer);
     bubble.classList.remove('is-hiding');
     bubble.classList.add('is-visible');
-    // Håll kvar 2.6 s (0.6 s animation + 2 s lästid), tona sedan bort
+    // Håll kvar 1.95 s, tona sedan bort
     bubbleTimer = setTimeout(function () {
       bubble.classList.add('is-hiding');
       bubbleTimer = setTimeout(function () {
         bubble.classList.remove('is-visible', 'is-hiding');
         bubbleActive = false;
-      }, 350);
-    }, 2600);
+      }, 260);
+    }, 1950);
   }
 
   function triggerRobot() {
