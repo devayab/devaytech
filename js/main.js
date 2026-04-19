@@ -149,6 +149,12 @@ window.loadMap = loadMap;
     card.addEventListener('click', function () { triggerAnim(card); });
   });
 
+  // Tjänsteikoner — animation vid hover (desktop) och klick/tap (mobil)
+  document.querySelectorAll('.card-icon').forEach(function (icon) {
+    icon.addEventListener('mouseenter', function () { triggerAnim(icon); });
+    icon.addEventListener('click', function () { triggerAnim(icon); });
+  });
+
   // Robot — hopp vid hover (desktop) och klick/tap (mobil)
   var robot = document.querySelector('.ai-robot');
   if (robot) {
