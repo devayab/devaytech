@@ -1364,6 +1364,16 @@ h1, h2, h3, h4 {
   .ai-banner {
     border-color: #3D4DB3;
   }
+
+  /* Pratbubbla: mörk bakgrund så den ljusa texten syns */
+  .robot-bubble {
+    background: #2a2a28;
+    color: #f0ede8;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+  }
+  .robot-bubble::after {
+    border-top-color: #2a2a28;
+  }
   .ai-banner p {
     color: #93A8FF;
   }
