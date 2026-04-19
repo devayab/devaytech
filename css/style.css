@@ -1190,8 +1190,9 @@ h1, h2, h3, h4 {
   }
 
   .hero {
-    padding-top: calc(64px + env(safe-area-inset-top, 0px));
-    min-height: 100vh;
+    justify-content: flex-start;
+    padding-top: calc(64px + env(safe-area-inset-top, 60px));
+    min-height: 100svh;
   }
 
   .nav-links {
