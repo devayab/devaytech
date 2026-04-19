@@ -820,13 +820,13 @@ h1, h2, h3, h4 {
   align-items: stretch;
 }
 
-.contact-anna {
+.contact-photo {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   min-height: 420px;
 }
-.contact-anna img {
+.contact-photo img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1120,7 +1120,7 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr;
   }
 
-  .contact-anna {
+  .contact-photo {
     height: 480px;
     min-height: unset;
   }
@@ -1388,7 +1388,7 @@ h1, h2, h3, h4 {
   }
 
   /* Portrait-foto */
-  .contact-anna img {
+  .contact-photo img {
     opacity: 0.9;
   }
 }
