@@ -149,10 +149,21 @@ window.loadMap = loadMap;
     card.addEventListener('click', function () { triggerAnim(card); });
   });
 
-  // Tjänsteikoner — animation vid hover (desktop) och klick/tap (mobil)
-  document.querySelectorAll('.card-icon').forEach(function (icon) {
-    icon.addEventListener('mouseenter', function () { triggerAnim(icon); });
-    icon.addEventListener('click', function () { triggerAnim(icon); });
+  // Tjänsteikoner — animation vid hover/tap på kortet
+  document.querySelectorAll('.service-card').forEach(function (card) {
+    var icon = card.querySelector('.card-icon');
+    if (!icon) return;
+    function triggerIcon() {
+      if (icon.classList.contains('is-animating')) return;
+      icon.classList.add('is-animating');
+      var svg = icon.querySelector('svg');
+      (svg || icon).addEventListener('animationend', function handler() {
+        icon.classList.remove('is-animating');
+        (svg || icon).removeEventListener('animationend', handler);
+      });
+    }
+    card.addEventListener('mouseenter', triggerIcon);
+    card.addEventListener('click', triggerIcon);
   });
 
   // Robot — hopp vid hover (desktop) och klick/tap (mobil)
