@@ -166,10 +166,39 @@ window.loadMap = loadMap;
     card.addEventListener('click', triggerIcon);
   });
 
-  // Robot — hopp vid hover (desktop) och klick/tap (mobil)
-  var robot = document.querySelector('.ai-robot');
+  // Robot — hopp + pratbubbla vid hover (desktop) och klick/tap (mobil)
+  var robot        = document.querySelector('.ai-robot');
+  var bubble       = document.querySelector('.robot-bubble');
+  var bubbleMsgs   = ['Hej!', 'Är det något jag kan hjälpa till med?', 'Vad tycker du om Agentic AI?'];
+  var bubbleIdx    = 0;
+  var bubbleActive = false;
+  var bubbleTimer;
+
+  function showBubble() {
+    if (!bubble || bubbleIdx >= bubbleMsgs.length) return;
+    bubbleActive = true;
+    bubble.textContent = bubbleMsgs[bubbleIdx++];
+    clearTimeout(bubbleTimer);
+    bubble.classList.remove('is-hiding');
+    bubble.classList.add('is-visible');
+    // Håll kvar 2.6 s (0.6 s animation + 2 s lästid), tona sedan bort
+    bubbleTimer = setTimeout(function () {
+      bubble.classList.add('is-hiding');
+      bubbleTimer = setTimeout(function () {
+        bubble.classList.remove('is-visible', 'is-hiding');
+        bubbleActive = false;
+      }, 350);
+    }, 2600);
+  }
+
+  function triggerRobot() {
+    if (bubbleActive) return;
+    triggerAnim(robot);
+    showBubble();
+  }
+
   if (robot) {
-    robot.addEventListener('mouseenter', function () { triggerAnim(robot); });
-    robot.addEventListener('click', function () { triggerAnim(robot); });
+    robot.addEventListener('mouseenter', triggerRobot);
+    robot.addEventListener('click',      triggerRobot);
   }
 })();
