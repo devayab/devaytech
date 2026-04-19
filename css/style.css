@@ -44,34 +44,25 @@
 /* ── 1. CSS CUSTOM PROPERTIES (VARIABLER) ────────────── */
 
 :root {
-  /* Färger — 2026 palett: teal-emerald + warm sand */
-  --color-primary:      #3451D1;   /* Cobalt indigo, 5.9:1 på sand — AA ✅ */
-  --color-primary-dk:   #2940A8;   /* Mörkare indigo, hover */
-  --color-secondary:    #6B8EF5;   /* Ljusare indigo — bakgrunder, dekor */
-  --color-secondary-dk: #4F73E5;
-  --color-primary-btn:    #3451D1;
-  --color-primary-btn-dk: #2940A8;
-  --color-primary-text:   #3451D1;   /* 5.9:1 på sand AA ✅ */
-  --color-primary-text-dk:#2940A8;
-  --color-accent:       #ffd166;
-  --color-text:         #1c1c1a;   /* Warm charcoal */
-  --color-text-muted:   #5c5c58;   /* Warm grey, 7.2:1 AA ✅ */
-  --color-text-light:   #7a7a74;   /* Warm grey light, 4.6:1 AA ✅ */
-  --color-bg:           #f5f2ee;   /* Warm sand/beige — sidbakgrund */
-  --color-bg-alt:       #fff;      /* Vit — nav, kort, sektioner */
-  --color-bg-card:      #f0ede8;   /* Något varmare — value-card, kartbox */
-  --color-border:       #e5e0d8;   /* Varm sandgräns */
-  --color-primary-light:  #EEF2FF;   /* Indigo-tinted bakgrund */
-  --color-primary-border: #C7D2FE;
+  /* Färger — 2026 palett: cobalt indigo + warm sand */
+  --color-primary:         #3451D1;   /* Cobalt indigo, 5.9:1 på sand — AA ✅ */
+  --color-primary-dk:      #2940A8;   /* Mörkare indigo, hover */
+  --color-secondary:       #6B8EF5;   /* Ljusare indigo — dekor, hero-accent */
+  --color-primary-text:    #3451D1;   /* 5.9:1 på sand AA ✅ */
+  --color-primary-text-dk: #2940A8;
+  --color-text:            #1c1c1a;   /* Warm charcoal */
+  --color-text-muted:      #5c5c58;   /* Warm grey, 7.2:1 AA ✅ */
+  --color-text-light:      #7a7a74;   /* Warm grey light, 4.6:1 AA ✅ */
+  --color-bg:              #f5f2ee;   /* Warm sand/beige — sidbakgrund */
+  --color-bg-alt:          #fff;      /* Vit — nav, kort, sektioner */
+  --color-bg-card:         #f0ede8;   /* Något varmare — value-card, kartbox */
+  --color-border:          #e5e0d8;   /* Varm sandgräns */
+  --color-primary-light:   #EEF2FF;   /* Indigo-tinted bakgrund */
+  --color-primary-border:  #C7D2FE;
 
   /* Typsnitt */
   --font-heading: 'Montserrat', sans-serif;
   --font-body:    'Open Sans', sans-serif;
-
-  /* Avstånd */
-  --section-pad:  5rem 3rem;
-  --card-radius:  12px;
-  --btn-radius:   6px;
 }
 
 
@@ -704,30 +695,7 @@ h1, h2, h3, h4 {
 }
 
 
-/* ── 10. TEAM-FOTO & BILDSTRIP ──────────────────────── */
-
-.team-photo {
-  margin: 3rem 0 0;
-  border-radius: 16px;
-  overflow: hidden;
-  max-height: 500px;
-}
-
-.team-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 20%;
-  display: block;
-}
-
-.team-photo figcaption {
-  font-size: 0.75rem;
-  color: var(--color-text-light);
-  text-align: center;
-  padding: 0.75rem 0 0;
-  font-family: var(--font-body);
-}
+/* ── 10. BILDSTRIP ───────────────────────────────────── */
 
 .culture-strip {
   display: grid;
@@ -840,73 +808,6 @@ h1, h2, h3, h4 {
   font-size: 0.75rem;
   color: var(--color-primary);
   font-weight: 700;
-}
-
-
-/* ── 11. BLOGG ───────────────────────────────────────── */
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
-}
-
-.blog-card {
-  border: 1.5px solid var(--color-border);
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--color-bg-alt);
-  transition: border-color 0.2s ease;
-}
-
-.blog-card:hover {
-  border-color: var(--color-primary);
-}
-
-.blog-card-image {
-  height: 140px;
-  background: #e3f2fd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-}
-
-.blog-card-body {
-  padding: 1.5rem;
-}
-
-.blog-date {
-  font-size: 0.68rem;
-  color: var(--color-text-light);
-  margin-bottom: 0.5rem;
-}
-
-.blog-card h3 {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-}
-
-.blog-card p {
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-}
-
-.blog-link {
-  font-family: var(--font-heading);
-  font-size: 0.73rem;
-  color: var(--color-primary);
-  font-weight: 700;
-  margin-top: 0.8rem;
-  display: inline-block;
-}
-
-.blog-link:hover {
-  color: var(--color-primary-dk);
 }
 
 
@@ -1244,10 +1145,6 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr;
   }
 
-  .blog-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .cta-banner {
     margin: 0 1.5rem 3rem;
     padding: 2.5rem;
@@ -1324,7 +1221,6 @@ h1, h2, h3, h4 {
 
   .services-grid,
   .case-grid,
-  .blog-grid,
   .values-grid {
     grid-template-columns: 1fr;
   }
@@ -1503,8 +1399,7 @@ h1, h2, h3, h4 {
 @media print {
   .nav,
   .cta-banner,
-  .contact-map,
-  .blog-card-image {
+  .contact-map {
     display: none;
   }
 

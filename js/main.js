@@ -1,11 +1,13 @@
 /**
  * Devay AB — Huvudskript
- * Version: 1.0
  * ─────────────────────────────────────────
  * Hanterar:
  *  1. Mobil hamburger-meny
  *  2. Aktiv nav-länk vid scroll
- *  3. Navbar-skugga vid scroll
+ *  3. Transparent nav → solid vid scroll
+ *  4. Scroll-animationer (IntersectionObserver)
+ *  5. GDPR-karta (lazy-load vid samtycke)
+ *  6. Hover/tap-animationer (ikoner, värdekort, robot + pratbubbla)
  */
 
 (function () {
@@ -36,16 +38,16 @@
 
   /* ── 2. AKTIV NAV-LÄNK VID SCROLL ─────────────── */
 
-  var sections  = document.querySelectorAll('section[id]');
-  var navLinks  = document.querySelectorAll('.nav-link');
+  const sections  = document.querySelectorAll('section[id]');
+  const navLinks  = document.querySelectorAll('.nav-link');
 
   function highlightNav() {
-    var scrollY = window.scrollY + 120;
+    const scrollY = window.scrollY + 120;
 
     sections.forEach(function (section) {
-      var top    = section.offsetTop;
-      var height = section.offsetHeight;
-      var id     = section.getAttribute('id');
+      const top    = section.offsetTop;
+      const height = section.offsetHeight;
+      const id     = section.getAttribute('id');
 
       if (scrollY >= top && scrollY < top + height) {
         navLinks.forEach(function (link) {
@@ -63,12 +65,12 @@
 
   /* ── 3. TRANSPARENT NAV ÖVER HERO → SOLID VID SCROLL ── */
 
-  var nav  = document.querySelector('.nav');
-  var hero = document.querySelector('.hero');
+  const nav  = document.querySelector('.nav');
+  const hero = document.querySelector('.hero');
 
   function updateNav() {
     if (!nav) return;
-    var threshold = hero ? hero.offsetHeight - 80 : 100;
+    const threshold = hero ? hero.offsetHeight - 80 : 100;
     if (window.scrollY > threshold) {
       nav.classList.add('scrolled');
     } else {
@@ -96,7 +98,7 @@
     return;
   }
 
-  var observer = new IntersectionObserver(function (entries) {
+  const observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
@@ -118,8 +120,8 @@
 /* ── 5. GDPR-KARTA ─────────────────────────────────── */
 
 function loadMap() {
-  var consent = document.getElementById('map-consent');
-  var iframe   = document.getElementById('map-iframe');
+  const consent = document.getElementById('map-consent');
+  const iframe  = document.getElementById('map-iframe');
 
   if (consent) consent.style.display = 'none';
   if (iframe) {
@@ -151,12 +153,12 @@ window.loadMap = loadMap;
 
   // Tjänsteikoner — animation vid hover/tap på kortet
   document.querySelectorAll('.service-card').forEach(function (card) {
-    var icon = card.querySelector('.card-icon');
+    const icon = card.querySelector('.card-icon');
     if (!icon) return;
     function triggerIcon() {
       if (icon.classList.contains('is-animating')) return;
       icon.classList.add('is-animating');
-      var svg = icon.querySelector('svg');
+      const svg = icon.querySelector('svg');
       (svg || icon).addEventListener('animationend', function handler() {
         icon.classList.remove('is-animating');
         (svg || icon).removeEventListener('animationend', handler);
@@ -167,12 +169,12 @@ window.loadMap = loadMap;
   });
 
   // Robot — hopp + pratbubbla vid hover (desktop) och klick/tap (mobil)
-  var robot        = document.querySelector('.ai-robot');
-  var bubble       = document.querySelector('.robot-bubble');
-  var bubbleMsgs   = ['Hej!', 'Är det något jag kan hjälpa till med?', 'Vad tycker du om Agentic AI?'];
-  var bubbleIdx    = 0;
-  var bubbleActive = false;
-  var bubbleTimer;
+  const robot      = document.querySelector('.ai-robot');
+  const bubble     = document.querySelector('.robot-bubble');
+  const bubbleMsgs = ['Hej!', 'Är det något jag kan hjälpa till med?', 'Vad tycker du om Agentic AI?'];
+  let bubbleIdx    = 0;
+  let bubbleActive = false;
+  let bubbleTimer;
 
   function showBubble() {
     if (!bubble || bubbleIdx >= bubbleMsgs.length) return;
